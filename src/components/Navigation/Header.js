@@ -13,7 +13,7 @@ const Header = () => {
         variant="dark"
         position="sticky"
       >
-        <Navbar.Brand href="#home" className="header__link">Coffney</Navbar.Brand>
+        <Navbar.Brand href="/" className="header__link">Coffney</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto "></Nav>
