@@ -1,14 +1,47 @@
-.header__link{
+.header__link {
     text-decoration: none !important;
     color: white;
+
+
 }
 
-.header__link:hover{
+.header__link:hover {
     text-decoration: none;
     color: orange;
 }
 
 
-.header__link, .header__link:hover, .header__link:focus {
+
+.header__nav__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center !important;
+    justify-content: center;
+
+}
+
+.header__checkout__visual {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.header__checkout__number {
+    display: flex;
+    justify-content: center;
+    color: white;
     text-decoration: none !important;
+}
+
+
+.header__cart {
+   color: white;
+    height: auto;
+    width: 25px;
+}
+
+.header__cart:hover {
+    color: orange;
 }

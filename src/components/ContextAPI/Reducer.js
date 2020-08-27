@@ -2,12 +2,7 @@ import shirt1 from "../../Assets/shirts/shirt1.jpg";
 
 export const initialState = {
   basket: [
-    {
-      id: "1",
-      title: "Yoga Coffee Naps",
-      price: 19.99,
-      image: shirt1,
-    },
+
   ],
 };
 

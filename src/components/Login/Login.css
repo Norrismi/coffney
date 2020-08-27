@@ -1,0 +1,55 @@
+.login__container {
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+    width: 375px;
+    background-color: pink;
+    margin: 50px auto 0 auto;
+    border-radius: 5px;
+}
+
+.login__input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    width: 250px;
+    background-color: pink;
+    margin: 50px auto 0 auto;
+    border-radius: 5px;
+}
+
+input{
+    border-radius: 2px;
+    border: solid grey ;
+    border-width: 1px;
+}
+
+.login__input>input {
+    margin-top: 5px;
+
+}
+
+.login__create__account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    line-height: 14px;
+  
+}
+
+
+.login__login__btn,
+.login__register__btn {
+    height: auto;
+    margin: 10px 0 50px 0;
+    border: none;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+
+ 
+    
+}

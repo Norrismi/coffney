@@ -1,9 +1,13 @@
 import React from "react";
-import './Header.css'
+import "./Header.css";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
+import { FaShoppingCart } from "react-icons/fa";
+import { useStateValue } from "../ContextAPI/StateProvider";
 
 const Header = () => {
+  const [{ basket }, user] = useStateValue();
+
   return (
     <nav className="App sticky-top">
       <Navbar
@@ -13,31 +17,39 @@ const Header = () => {
         variant="dark"
         position="sticky"
       >
-        <Navbar.Brand href="/" className="header__link">Coffney</Navbar.Brand>
+        <Navbar.Brand href="/" className="header__link">
+          Coffney
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse
+          id="responsive-navbar-nav"
+         
+        >
           <Nav className="mr-auto "></Nav>
-          <Nav>
-            <Link  to="/">
-              {/* <Nav.Link href="#home"> */}
-                <li className="header__link p-2">Home</li>
-              {/* </Nav.Link> */}
+          <Nav  className="header__nav__container">
+            <Link to="/">
+              <li className="header__link p-2">Home</li>
             </Link>
-            {/* <Link exact to="/testimonials">
-            <Nav.Link href="#testimonials">
-              <li>Testimonials</li>
-            </Nav.Link>
-          </Link> */}
-            <Link  to="/contact">
-              {/* <Nav.Link href="#contact"> */}
-                <li className="header__link p-2">Contact</li>
-              {/* </Nav.Link> */}
+
+            <Link to="/contact">
+              <li className="header__link p-2">Contact</li>
             </Link>
-            <Link  to="/checkout">
-              {/* <Nav.Link href="#home"> */}
-                <li className="header__link p-2">Checkout</li>
-              {/* </Nav.Link> */}
+
+            <Link to="/login">
+              <li className="header__link p-2">Login</li>
             </Link>
+
+
+            <Link to="/checkout">
+              <div className="header__checkout__visual p-2">
+                <div className="header__checkout__number">
+                  {basket?.length}
+                </div>
+                <FaShoppingCart className="header__cart" />
+              </div>
+            </Link>
+
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -12,12 +12,13 @@ const Subtotal = ({ id, title, image, price }) => {
   console.log();
 
   return (
-    <div className="subtotal">
-      <div className="subtotal__total">
+    <div className="subtotal sticky-top">
+      <div className="subtotal__total sticky-top">
         <CurrencyFormat
           renderText={(value) => (
             <p>
-              Subtotal: ({basket.length}) {amount} for a total of {value}
+              Subtotal: ({basket.length} {amount}): 
+              <strong> {value}</strong>
             </p>
           )}
           value={getBasketTotal(basket).toFixed(2)}
@@ -27,7 +28,7 @@ const Subtotal = ({ id, title, image, price }) => {
         />
       </div>
       <div className="subtotal__checkout">
-        <button>Proceed to Checkout</button>
+        <button className="subtotal__btn">Proceed to Checkout</button>
       </div>
     </div>
   );

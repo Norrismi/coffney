@@ -1,6 +1,7 @@
 import React from "react";
 import { useStateValue } from "../ContextAPI/StateProvider";
 import "./CheckoutProduct.css";
+import { FaBorderNone } from "react-icons/fa";
 
 
 const CheckoutProduct = ({ id, title, image, price }) => {
@@ -16,6 +17,7 @@ const CheckoutProduct = ({ id, title, image, price }) => {
 
 
   return (
+ <div>
  
       <div className="checkoutProduct">
         <div className="checkoutProduct__container">
@@ -34,6 +36,8 @@ const CheckoutProduct = ({ id, title, image, price }) => {
           </button>
         </div>
       </div>
+
+ </div>
          
  
   );

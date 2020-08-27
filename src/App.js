@@ -5,6 +5,7 @@ import Header from "./components/Navigation/Header";
 import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
 import Checkout from "./components/Checkout/Checkout";
+import Login from './components/Login/Login'
 import "font-awesome/css/font-awesome.min.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Switch>
         <Route path={"/checkout"} component={Checkout} />
         <Route path={"/contact"} component={Contact} />
+        <Route path={"/login"} component={Login} />
         <Route exact path={"/"} component={Home} />
       </Switch>
     </Router>
