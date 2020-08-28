@@ -4,9 +4,17 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
 import { useStateValue } from "../ContextAPI/StateProvider";
+import { auth } from "../../index";
 
 const Header = () => {
-  const [{ basket }, user] = useStateValue();
+  const [{ basket, user }] = useStateValue();
+
+  const logout = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
+
 
   return (
     <nav className="App sticky-top">
@@ -21,12 +29,9 @@ const Header = () => {
           Coffney
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse
-          id="responsive-navbar-nav"
-         
-        >
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto "></Nav>
-          <Nav  className="header__nav__container">
+          <Nav className="header__nav__container">
             <Link to="/">
               <li className="header__link p-2">Home</li>
             </Link>
@@ -39,16 +44,23 @@ const Header = () => {
               <li className="header__link p-2">Login</li>
             </Link>
 
-
             <Link to="/checkout">
               <div className="header__checkout__visual p-2">
-                <div className="header__checkout__number">
-                  {basket?.length}
-                </div>
+                <div className="header__checkout__number">{basket?.length}</div>
                 <FaShoppingCart className="header__cart" />
               </div>
             </Link>
-
+            <Link  to={!user && "/login"}
+             className="header__link">
+              <div onClick={logout} className="header__option">
+                <span className="header__optionLineOne">
+                   {user? `Hello ${user.email}`: null}
+                </span>
+                <span className="header__optionLineTwo">
+                  {user ? "Sign Out" : "Sign In"}
+                </span>
+              </div>
+            </Link>
 
           </Nav>
         </Navbar.Collapse>

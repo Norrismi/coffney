@@ -1,9 +1,8 @@
-import shirt1 from "../../Assets/shirts/shirt1.jpg";
+
 
 export const initialState = {
-  basket: [
-
-  ],
+  basket: [],
+  user: null
 };
 
 export const getBasketTotal = (basket) => basket?.reduce((amount, item) => amount + item.price, 0);
@@ -13,6 +12,13 @@ const reducer = (state, action) => {
   console.log(action);
 
   switch (action.type) {
+    case "SET_USER":
+        console.log('SET_USER')
+        return{
+            ...state,
+            user: action.user
+        }
+
     case "ADD_TO_BASKET":
       return {
         ...state,
@@ -27,7 +33,7 @@ const reducer = (state, action) => {
         (basketItem) => basketItem.id === action.id
       );
 
-      if (index > 0) {
+      if (index >= 0) {
         newBasket.splice(index, 1);
       } else {
         console.error(`Can't remove ${action.id}`);

@@ -9,6 +9,12 @@
     border-radius: 5px;
 }
 
+h3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .login__input {
     display: flex;
     flex-direction: column;
